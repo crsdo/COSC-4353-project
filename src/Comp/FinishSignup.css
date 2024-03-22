@@ -1,0 +1,174 @@
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 150px;
+    width: 500px;
+    background: #fff;
+    padding-bottom: 30px;
+    border-radius: 50px;
+}
+
+/* Header Styles */
+.headers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Text Styles */
+.text {
+    color: #3c009d;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Underline Styles */
+.underline {
+    width: 61px;
+    height: 6px;
+    background: #3c009d;
+    border-radius: 9px;
+}
+
+/* Inputs Styles */
+.inputs {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 50px;
+    background: #eaeaea;
+    border-radius: 6px;
+}
+
+.input input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+}
+
+
+/* Submit Container Styles */
+.submit-container {
+    display: flex;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+/* Submit Button Styles */
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #c2a3ed;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.complete-container {
+    display: flex;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+/* Submit Button Styles */
+.complete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #806a9f;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Gray Submit Button Styles */
+.gray {
+    background: #eaeaea;
+    color: #0e0b0b;
+}
+
+.p{
+    padding-left: 10px;
+}
+
+.hover {
+    cursor: pointer;
+    position: relative;
+}
+
+.hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: red; /* Change to desired color */
+    transition: width 0.3s ease;
+}
+
+.hover:hover::after {
+    width: 100%;
+}
+
+.button{
+    padding-left: 10px;
+    border-radius: 6px;
+}
+
+button[type='submit'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 49px;
+    color: #fff;
+    background: #200841;
+    border: none;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust margin as needed */
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase; /* Optionally, convert text to uppercase */
+}
+
+.my-link {
+    color: #e0dbe7;
+    text-decoration: none;
+    font-weight: bold;
+    /* Add other styles as needed */
+  }
+  
+  .my-link:hover {
+    color: #f0e9f0; /* Change color on hover */
+  }
+  
