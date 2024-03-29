@@ -1,19 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Comp/Login';
-import Dashboard from './Comp/Dahsboard'; // Fixed typo in component import
-import FuelHist from './Comp/FuelHist';
+import Signup from './Comp/Signup';
+import Profile from './Comp/Profile';
 import FuelQuote from './Comp/FuelQuote';
-import FinishSignup from './Comp/FinishSignup';
+import FuelHistory from './Comp/FuelHistory';
+import ViewProfile from './Comp/ViewProfile';
+
 
 function App() {
   return (
       <Routes>
         <Route exact path='/' element={<Login />} />
-        <Route exact path='/FinishSignup' element={<FinishSignup />} />
-        <Route exact path='/Dashboard' element={<Dashboard />} />
-        <Route exact path='/FuelHist' element={<FuelHist />} />
-        <Route exact path='/FuelQuote' element={<FuelQuote />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Signup />} />
+        <Route path='profile' element= {<Profile />} />
+        <Route path='/fuel_quote_form' element={<FuelQuote />} />
+        <Route path='/fuel_history' element={<FuelHistory />} />
+        <Route path='/view_profile' element={<ViewProfile />} />
       </Routes>
   );
 }

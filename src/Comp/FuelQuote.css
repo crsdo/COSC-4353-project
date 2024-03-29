@@ -1,74 +1,51 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    height: 100vh;
+/* FuelQuote.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
   }
   
-  .header {
-    grid-row: 1 / 2;
-    background-color: #333;
-    color: white;
+  .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 0 20px;
   }
   
-  .sidebar {
-    grid-row: 2 / 3;
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  .fuel-quote-container {
-    grid-row: 2 / 3;
-    background-color: #fff;
-    padding: 20px;
-    overflow-y: auto;
-  }
-  
-  .fuel-quote-form {
-    max-width: 400px;
+  .quote-form {
+    max-width: 600px;
     margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
   }
   
-  .fuel-quote-form label {
-    display: block;
+  .quote-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .quote-form label {
     margin-bottom: 5px;
   }
   
-  .fuel-quote-form input {
-    width: 100%;
-    padding: 8px;
+  .quote-form input,
+  .quote-form select,
+  .quote-form button {
     margin-bottom: 10px;
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
   }
   
-  .fuel-quote-form input[type='date'] {
-    /* Additional styling for date input */
-    appearance: none;
-    padding-right: 30px;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-  }
-  
-  .fuel-quote-form input:disabled {
-    background-color: #f4f4f4;
-  }
-  
-  .fuel-quote-form input[type='submit'] {
-    background-color: #333;
+  .quote-form button {
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px;
   }
   
-  .fuel-quote-form input[type='submit']:hover {
-    background-color: #555;
+  .quote-form button:hover {
+    background-color: #0056b3;
   }
+  
   
