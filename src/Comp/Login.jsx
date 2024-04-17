@@ -38,7 +38,7 @@ const Login = () => {
             <NavBar />
             <div className="login-container">
                 <div className="login-form">
-                    <h2>Welcome back</h2>
+                    <h2>Welcome back!</h2>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">Username</label>
                         <input

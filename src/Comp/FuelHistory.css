@@ -4,9 +4,9 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 2.5px solid #012745;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .profile-container h2 {
@@ -43,5 +43,5 @@
 
 .past-orders-table tbody tr:nth-child(even),
 .current-orders-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
