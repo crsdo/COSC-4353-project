@@ -8,6 +8,7 @@ import FuelHistory from './Comp/FuelHistory';
 import ViewProfile from './Comp/ViewProfile';
 
 
+
 function App() {
   return (
       <Routes>
@@ -18,6 +19,16 @@ function App() {
         <Route path='/fuel_quote_form' element={<FuelQuote />} />
         <Route path='/fuel_history' element={<FuelHistory />} />
         <Route path='/view_profile' element={<ViewProfile />} />
+        <Route path="/about" element={
+          <div>
+            Group 48
+            <p>Created by:</p>
+            <p>Khoi Vo </p>
+            <p>Chris Do</p>
+            <p>Riches Dang</p>
+            <p>Christine Ngo</p>
+            </div>} />
+
       </Routes>
   );
 }

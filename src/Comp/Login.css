@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #d7d9da;
+  background: linear-gradient(to bottom, #56dfef, #064a84, #56dfef);
 }
 
 .login-container {
@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  border: 2.5px solid #012745 !important;
 }
 
 .login-form {
@@ -18,6 +19,7 @@ body {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2.5px solid #012745;
 }
 
 .login-form h2 {
