@@ -1,7 +1,5 @@
-// QuoteForm.js
-
 import React, { useState } from 'react';
-import './Profile.css'; // Import the Profile.css file
+import './FuelQuote.css'; // Import the FuelQuote.css file
 import Navbar from './NavBar';
 import Sidebar from './Sidebar';
 
@@ -33,15 +31,12 @@ const QuoteForm = () => {
             <Sidebar />
             <div className="profile-container">
                 <h2>Fuel Quote Form</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="address-section">
-                        <h3>Shipping Address</h3>
+                <form onSubmit={handleSubmit} className="checkout-form">
+                    <div className="customer-info">
+                        <h3>Delivery Address</h3>
                         <p>{address.address1}</p>
                         <p>{address.address2}</p>
                         <p>{`${address.city}, ${address.state} ${address.zip}`}</p>
-                    </div>
-                    <div className="gallons-section">
-                        <h3>Gallons Requested and Date</h3>
                         <div>
                             <label htmlFor="gallonsRequested">Gallons Requested:</label>
                             <input
@@ -63,12 +58,16 @@ const QuoteForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="cost-section">
-                        <h3>Expected Cost and Total Cost</h3>
-                        <p>Expected Cost: ${expectedCost}</p>
-                        <p>Total Cost: ${totalCost}</p>
+                    <div className="order-summary">
+                        <h3>Order Summary</h3>
+
+                        <div className="cost-section">
+                            <p>Expected Cost: ${expectedCost}</p>
+                            <p>Total Cost: ${totalCost}</p>
+                        </div>
+                        <button type="submit">Submit</button>
                     </div>
-                    <button type="submit">Submit</button>
+                    
                 </form>
             </div>
         </div>

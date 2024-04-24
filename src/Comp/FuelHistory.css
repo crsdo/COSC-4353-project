@@ -4,20 +4,21 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
 .profile-container h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
+    color: #333333;
 }
 
 .profile-container h3 {
     margin-top: 40px;
     margin-bottom: 20px;
     font-size: 1.25rem;
+    color: #666666;
 }
 
 .past-orders-table,
@@ -30,13 +31,13 @@
 .current-orders-table th,
 .past-orders-table td,
 .current-orders-table td {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
 }
 
 .past-orders-table th,
 .current-orders-table th {
-    background-color: #f2f2f2;
+    background-color: #f8f8f8;
     font-weight: bold;
     text-align: left;
 }

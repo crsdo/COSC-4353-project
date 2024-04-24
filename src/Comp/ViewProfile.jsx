@@ -1,16 +1,19 @@
 // ViewProfile.js
 
 import React from 'react';
-import './Profile.css'; // Import the CSS file
+import './ViewProfile.css'; // Import the CSS file
 import NavBar from './NavBar';
 import Sidebar from './Sidebar';
 
 const ViewProfile = () => {
     // Dummy profile data for testing
     const profileData = {
+        username: 'johndoe123',
         name: 'John Doe',
         email: 'johndoe@example.com',
-        location: 'New York, USA',
+        address: '123 AppleTown',
+        city: 'New York',
+        state: 'NY',
     };
 
     return (
@@ -23,6 +26,10 @@ const ViewProfile = () => {
                     <table>
                         <tbody>
                             <tr>
+                                <td>Username:</td>
+                                <td>{profileData.username}</td>
+                            </tr>
+                            <tr>
                                 <td>Name:</td>
                                 <td>{profileData.name}</td>
                             </tr>
@@ -31,10 +38,17 @@ const ViewProfile = () => {
                                 <td>{profileData.email}</td>
                             </tr>
                             <tr>
-                                <td>Location:</td>
-                                <td>{profileData.location}</td>
+                                <td>Address:</td>
+                                <td>{profileData.address}</td>
                             </tr>
-                            {/* Add more rows as needed */}
+                            <tr>
+                                <td>City:</td>
+                                <td>{profileData.city}</td>
+                            </tr>
+                            <tr>
+                                <td>State:</td>
+                                <td>{profileData.state}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

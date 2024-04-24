@@ -1,51 +1,78 @@
 /* FuelQuote.css */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .quote-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .quote-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .quote-form label {
-    margin-bottom: 5px;
-  }
-  
-  .quote-form input,
-  .quote-form select,
-  .quote-form button {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .quote-form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .quote-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  
+/* Main container */
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.checkout-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Customer info styles */
+.customer-info {
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.customer-info h3 {
+  margin-bottom: 10px;
+}
+
+/* Order summary styles */
+.order-summary {
+  padding: 15px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h3 {
+  margin-bottom: 10px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0c14b;
+  color: #111;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f7ca88;
+}
+
+/* Gallons requested and delivery date styles */
+.customer-info div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.customer-info label {
+  font-weight: bold;
+}
+
+.customer-info input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}

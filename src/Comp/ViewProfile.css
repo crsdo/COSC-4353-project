@@ -1,0 +1,54 @@
+/* ViewProfile.css */
+
+/* Main container */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Profile data container */
+.profile-data {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Profile table */
+.profile-data table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Profile table cells */
+.profile-data td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Profile table headings */
+.profile-data th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Profile table row */
+.profile-data tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .profile-data {
+        padding: 10px;
+    }
+    .profile-data td,
+    .profile-data th {
+        padding: 6px;
+    }
+}
+
+/* Additional styles as needed */

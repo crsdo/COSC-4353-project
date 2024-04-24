@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import { createAPIEndpoint, ENDPOINTS } from '../API';
 import './Signup.css';
 import NavBar from './NavBar';
 
 const Signup = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -16,25 +16,28 @@ const Signup = () => {
     const [state, setState] = useState('');
     const [zipcode, setZipcode] = useState('');
     const [signupSuccess, setSignupSuccess] = useState(false);
+    const nav = useNavigate ();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/api/auth/register', {
-                username,
-                password,
-                fullName,
-                email,
-                phoneNumber,
-                address,
-                city,
-                state,
-                zipcode,
+            const response = await createAPIEndpoint(ENDPOINTS.UserRegister).post( {
+                username: username,
+                password: password,
+                name: fullName,
+                email: email,
+                phoneNumber: phoneNumber,
+                street: address,
+                city: city,
+                state: state,
+                zipcode: zipcode,
             });
-            console.log('Signup successful:', response.data);
+            alert("Account Successfully Created");
             setSignupSuccess(true); // Update state to indicate successful signup
         } catch (error) {
             console.error('Signup failed:', error.response.data);
+            alert("Failed to create an account");
+            return
             // Handle signup failure (e.g., display error message to user)
         }
     };
@@ -62,7 +65,7 @@ const Signup = () => {
                 <div className="signup-form">
                     <h2>Sign up for an account</h2>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="fullName">Full Name</label>
+
                         <input
                             type="text"
                             id="fullName"
@@ -70,8 +73,26 @@ const Signup = () => {
                             value={fullName}
                             onChange={(e) => setFullName(e.target.value)}
                             required
+                            placeholder='Full Name*'
                         />
-                        <label htmlFor="email">Email</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                            placeholder='Username*'
+                        />
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            placeholder='Password*'
+                        />
                         <input
                             type="email"
                             id="email"
@@ -79,17 +100,19 @@ const Signup = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
+                            placeholder='Email*'
                         />
-                        <label htmlFor="phoneNumber">Phone Number</label>
+
                         <input
                             type="tel"
                             id="phoneNumber"
                             name="phoneNumber"
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
+                            placeholder='Phone Number*'
                             required
                         />
-                        <label htmlFor="address">Address</label>
+
                         <input
                             type="text"
                             id="address"
@@ -97,8 +120,9 @@ const Signup = () => {
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             required
+                            placeholder='Address*'
                         />
-                        <label htmlFor="city">City</label>
+
                         <input
                             type="text"
                             id="city"
@@ -106,14 +130,25 @@ const Signup = () => {
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                             required
+                            placeholder='City*'
                         />
-                        <label htmlFor="state">State</label>
+                        <input
+                            type="text"
+                            id="zipcode"
+                            name="zipcode"
+                            value={zipcode}
+                            onChange={(e) => setZipcode(e.target.value)}
+                            required
+                            placeholder='Zip Code*'
+                        />
+                       
                         <select
                             id="state"
                             name="state"
                             value={state}
                             onChange={(e) => setState(e.target.value)}
                             required
+                            
                         >
                             <option value="">Select State</option>
                             <option value="AL">Alabama</option>
@@ -167,50 +202,13 @@ const Signup = () => {
                             <option value="WI">Wisconsin</option>
                             <option value="WY">Wyoming</option>
                         </select>
-
-                    <label htmlFor="zipcode">ZIP Code</label>
-                    <input
-                        type="text"
-                        id="zipcode"
-                        name="zipcode"
-                        value={zipcode}
-                        onChange={(e) => setZipcode(e.target.value)}
-                        required
-                    />
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
-                    />
-                    <button type="submit">Sign up</button>
-                </form>
-                <div className="login-link">
-                    Already have an account? <Link to="/login">Log in</Link>
+                        <button type="submit">Sign up</button>
+                    </form>
+                    <div className="login-link">
+                        Already have an account? <Link to="/login">Log in</Link>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 };
