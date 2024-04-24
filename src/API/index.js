@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //connects front end to back end, change if needed
 
-export const BASE_URL = 'https://c84b-76-142-23-132.ngrok-free.app/';
+export const BASE_URL = 'https://bbcf-76-142-23-132.ngrok-free.app/';
 
 
 export const ENDPOINTS = {
@@ -24,7 +24,7 @@ export const createAPIEndpoint = (endpoint) => {
     let url = BASE_URL + 'api/' + endpoint + '/';
     return {
         fetch: () => axios.get(url),
-        fetchById: id => axios.get(url + id),
+         fetchById: id => axios.get(url + id),
         post: newRecord => axios.post(url, newRecord),
         put: (id, updatedRecord) => axios.put(url + id, updatedRecord),
         patch: (id, updatedRecord) => axios.patch(url + id, updatedRecord)

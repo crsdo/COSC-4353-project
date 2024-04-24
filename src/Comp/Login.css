@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #ada0c3;
   border: 2.5px solid #012745 !important;
 }
 

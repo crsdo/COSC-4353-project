@@ -12,13 +12,15 @@
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px;
+    padding: 5px;
+    width: 100%; /* Make the profile data container 100% width */
 }
 
 /* Profile table */
 .profile-data table {
-    width: 100%;
+    width: 75%; /* Make the table 100% width */
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
 /* Profile table cells */
@@ -52,4 +54,17 @@
     }
 }
 
+.pp-container {
+    height: 100vh;
+}
 /* Additional styles as needed */
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}

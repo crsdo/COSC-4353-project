@@ -40,6 +40,7 @@ const FuelHistoryForm = () => {
         <div>
             <Navbar />
             <Sidebar />
+            <div className='pp-container'>
             <div className="profile-container">
                 <h2>Fuel Quote History</h2>
                 <h3>Current Orders</h3>
@@ -88,6 +89,7 @@ const FuelHistoryForm = () => {
                         ))}
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
     );

@@ -47,3 +47,7 @@
 .current-orders-table tbody tr:nth-child(even) {
     background-color: #ffffff;
 }
+
+.pp-container{
+    height: 100vh;
+}

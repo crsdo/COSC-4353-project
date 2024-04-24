@@ -1,25 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './FuelQuote.css'; // Import the FuelQuote.css file
 import Navbar from './NavBar';
+import axios from 'axios';
+
 import Sidebar from './Sidebar';
 
 const QuoteForm = () => {
     const [gallonsRequested, setGallonsRequested] = useState('');
     const [deliveryDate, setDeliveryDate] = useState('');
+    const [address, setAddress] = useState('');
+    const [address1, setAddress1] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipcode, setZipcode] = useState('');
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
     };
 
-    // Dummy address data
-    const address = {
-        address1: '123 Main St',
-        address2: 'Apt 1',
-        city: 'Anytown',
-        state: 'TX',
-        zip: '12345',
-    };
+    useEffect(() => {
+        async function fetchData() {
+          const accessToken = localStorage.getItem("accessToken");
+          let data = "";
+    
+          const instance = axios.create({
+            baseURL: "https://bbcf-76-142-23-132.ngrok-free.app/",
+            headers: { 
+              "ngrok-skip-browser-warning": "69420",
+              "Content-Type": "application/json",
+              authentication: accessToken },
+          });
+          const response = await instance.get("api/user/profile/")
+          console.log(response);
+          setAddress1(response.data.address.street);
+          setCity(response.data.address.city);
+          setState(response.data.address.state);
+          setZipcode(response.data.address.zipcode);
+        }
+    
+        fetchData();
+      }, []); // Empty
 
     // Dummy expected cost and total cost data
     const expectedCost = 2.50; // Example value, replace with actual calculation
@@ -29,14 +51,15 @@ const QuoteForm = () => {
         <div>
             <Navbar />
             <Sidebar />
+            <div className='pp-container'>
             <div className="profile-container">
                 <h2>Fuel Quote Form</h2>
                 <form onSubmit={handleSubmit} className="checkout-form">
                     <div className="customer-info">
                         <h3>Delivery Address</h3>
-                        <p>{address.address1}</p>
+                        <p>{address1}</p>
                         <p>{address.address2}</p>
-                        <p>{`${address.city}, ${address.state} ${address.zip}`}</p>
+                        <p>{`${city}, ${state} ${zipcode}`}</p>
                         <div>
                             <label htmlFor="gallonsRequested">Gallons Requested:</label>
                             <input
@@ -69,6 +92,7 @@ const QuoteForm = () => {
                     </div>
                     
                 </form>
+            </div>
             </div>
         </div>
     );

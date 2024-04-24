@@ -5,6 +5,13 @@ import Signup from './Comp/Signup';
 import FuelQuote from './Comp/FuelQuote';
 import FuelHistory from './Comp/FuelHistory';
 import ViewProfile from './Comp/ViewProfile';
+import AboutUs from './Comp/AboutUs';
+import ContactUs from './Comp/ContactUs';
+import ForgetPass from './Comp/ForgetPass';
+import EditProfile from './Comp/EditProfile';
+import Password from './Comp/Password';
+
+
 
 
 
@@ -17,15 +24,12 @@ function App() {
         <Route path='/fuel_quote_form' element={<FuelQuote />} />
         <Route path='/fuel_history' element={<FuelHistory />} />
         <Route path='/view_profile' element={<ViewProfile />} />
-        <Route path="/about" element={
-          <div>
-            Group 48
-            <p>Created by:</p>
-            <p>Khoi Vo </p>
-            <p>Chris Do</p>
-            <p>Riches Dang</p>
-            <p>Christine Ngo</p>
-            </div>} />
+        <Route path='/edit_profile' element={<EditProfile />} />
+        <Route path='/about' element={<AboutUs />} />
+        <Route path='/contact' element={<ContactUs />} />
+        <Route path='/forget_pass' element={<ForgetPass />} />
+        <Route path='/edit_password' element={<Password />} />
+        <Route path='/forget_pass' element={<ForgetPass />} />
 
       </Routes>
   );

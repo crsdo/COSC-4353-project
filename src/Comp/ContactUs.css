@@ -1,0 +1,50 @@
+/* Contact container styles */
+.contact-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fffefe;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 2.5px solid #012745 !important;
+}
+
+.cc-container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 120vh;
+    border: 2.5px solid #012745 !important;
+  }
+
+.contact-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Contact card styles */
+.contact-card {
+    background: rgb(250, 245, 245);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-card h2 {
+    color: #0056b3;
+}
+
+.contact-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.contact-card a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}

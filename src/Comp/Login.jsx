@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from './NavBar';
+// import Footer from './Footer';
 
 
 import { createAPIEndpoint, ENDPOINTS } from '../API';
@@ -28,7 +29,9 @@ const Login = () => {
         throw new Error(response.error);
       }
       // give accesss token here 
+      const accessToken = response.data;
       // check access token verification 
+      localStorage.setItem('accessToken', accessToken)
       // takes you to the profile
       nav('/view_profile');
     } catch (error) {
@@ -65,13 +68,14 @@ const Login = () => {
             <button type="submit">Sign in</button>
           </form>
           <div className="forgot-password">
-            <Link to="#">Forgot password?</Link>
+            <Link to="/forget_pass">Forgot password?</Link>
           </div>
           <div className="signup-link">
             Don't have an account? <Link to="/register">Sign up</Link>
           </div>
         </div>
       </div>
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,0 +1,74 @@
+/* Import the base styles */
+
+/* nav bar */
+nav {
+    background-color: #fffefe;
+    color: #cecaca;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+/* Additional styles for ForgetPass */
+
+.forget-pass {
+  width: 400px;
+  padding: 30px;
+  padding-right: 45px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2.5px solid #012745;
+  margin: 20px auto; /* Center the form */
+}
+
+.forget-pass h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.forget-pass form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.forget-pass form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.forget-pass form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0077b5;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.forget-pass form button:hover {
+  background-color: #005f88;
+}
+
+.forget-pass .forgot-password {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.forget-pass .signup-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forget-pass .signup-link a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.forget-pass .signup-link a:hover {
+  text-decoration: underline;
+}

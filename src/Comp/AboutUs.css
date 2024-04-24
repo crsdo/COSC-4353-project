@@ -1,0 +1,55 @@
+.aa-container {
+    position: relative; /* Ensure this is positioned relatively for absolute children */
+    height: 140vh; /* Adjust height as necessary */
+    border: 2.5px solid #012745; /* Keep if you need a border around the container */
+    overflow: hidden; /* Optional: in case of overflow issues */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the contents horizontally */
+    justify-content: center; /* Center the contents vertically */
+}
+
+.image-class {
+    position: absolute; /* Position absolutely to fill the parent container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("oilrig.png");
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 0; /* Make sure this is behind the content */
+}
+
+.about-container {
+    position: relative; /* This is key to bring it above the background */
+    max-width: 800px;
+    margin-top: -50px; /* Adjust margin as needed */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2.5px solid #012745;
+    z-index: 1; /* Ensure it's above the background */
+}
+
+h1, p {
+    z-index: 2; /* Make sure text is above any backgrounds */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+    color: #666;
+    margin: 10px;
+}
