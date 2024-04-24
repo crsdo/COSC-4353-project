@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { createAPIEndpoint, ENDPOINTS } from '../API';
 import './Signup.css';
@@ -16,30 +16,38 @@ const Signup = () => {
     const [state, setState] = useState('');
     const [zipcode, setZipcode] = useState('');
     const [signupSuccess, setSignupSuccess] = useState(false);
-    const nav = useNavigate ();
+    const nav = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await createAPIEndpoint(ENDPOINTS.UserRegister).post( {
-                username: username,
-                password: password,
-                name: fullName,
-                email: email,
-                phoneNumber: phoneNumber,
-                street: address,
-                city: city,
-                state: state,
-                zipcode: zipcode,
-            });
+
+            const payload = { 
+                payload: {
+                    "username" : username,
+                    "password" : password,
+                    "name" : fullName,
+                    "email" : email,
+                    "phoneNumber": phoneNumber,
+                    address : {
+                        "street" : address,
+                        "city" : city,
+                        "state" : state,
+                        "zipcode" : zipcode,
+                    }
+                }};
+                
+            const response = await createAPIEndpoint(ENDPOINTS.UserRegister).post(payload);
             alert("Account Successfully Created");
             setSignupSuccess(true); // Update state to indicate successful signup
-        } catch (error) {
-            console.error('Signup failed:', error.response.data);
-            alert("Failed to create an account");
-            return
-            // Handle signup failure (e.g., display error message to user)
         }
+
+        catch (error) {
+
+            alert(error);
+            return
+        }
+
     };
 
     // Function to redirect to the login page
@@ -141,14 +149,14 @@ const Signup = () => {
                             required
                             placeholder='Zip Code*'
                         />
-                       
+
                         <select
                             id="state"
                             name="state"
                             value={state}
                             onChange={(e) => setState(e.target.value)}
                             required
-                            
+
                         >
                             <option value="">Select State</option>
                             <option value="AL">Alabama</option>

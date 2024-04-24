@@ -1,53 +1,79 @@
-// ViewProfile.js
-
-import React from 'react';
-import './ViewProfile.css'; // Import the CSS file
-import NavBar from './NavBar';
+import React, { useState, useEffect } from 'react';
+import './ViewProfile.css'; // Import your CSS file for styling
+import NavBar from './NavBar'; // Import the NavBar component
 import Sidebar from './Sidebar';
+import { useNavigate } from 'react-router-dom';
+import { ENDPOINTS, createAPIEndpoint } from '../API';
 
-const ViewProfile = () => {
-    // Dummy profile data for testing
-    const profileData = {
-        username: 'johndoe123',
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        address: '123 AppleTown',
-        city: 'New York',
-        state: 'NY',
-    };
+const Profile = () => {
+    const [fullName, setFullName] = useState('');
+    const [address1, setAddress1] = useState('');
+    const [address2, setAddress2] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipcode, setZipcode] = useState('');
+    const nav = useNavigate();
+
+    useEffect(() => {
+        // Fetch user profile data from the backend
+        createAPIEndpoint(ENDPOINTS.GetProfile)
+
+            .fetch()
+            .then(response => {
+                const userData = response.data;
+                setFullName(userData.fullName);
+                setAddress1(userData.address1);
+                setAddress2(userData.address2);
+                setCity(userData.city);
+                setState(userData.state);
+                setZipcode(userData.zipcode);
+            })
+            .catch(error => {
+                console.error('Error fetching user profile:', error);
+                // Handle error (e.g., show error message to user)
+                alert(error);
+            });
+    }, []);
+
 
     return (
         <div>
             <NavBar />
             <Sidebar />
             <div className="profile-container">
-                <h2>User Profile</h2>
+                <h2>Profile Management</h2>
                 <div className="profile-data">
                     <table>
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td>Username:</td>
-                                <td>{profileData.username}</td>
+                                <td>Full Name:</td>
+                                <td>{fullName}</td>
                             </tr>
                             <tr>
-                                <td>Name:</td>
-                                <td>{profileData.name}</td>
+                                <td>Address 1:</td>
+                                <td>{address1}</td>
                             </tr>
                             <tr>
-                                <td>Email:</td>
-                                <td>{profileData.email}</td>
-                            </tr>
-                            <tr>
-                                <td>Address:</td>
-                                <td>{profileData.address}</td>
+                                <td>Address 2:</td>
+                                <td>{address2}</td>
                             </tr>
                             <tr>
                                 <td>City:</td>
-                                <td>{profileData.city}</td>
+                                <td>{city}</td>
                             </tr>
                             <tr>
                                 <td>State:</td>
-                                <td>{profileData.state}</td>
+                                <td>{state}</td>
+                            </tr>
+                            <tr>
+                                <td>Zipcode:</td>
+                                <td>{zipcode}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -57,4 +83,4 @@ const ViewProfile = () => {
     );
 };
 
-export default ViewProfile;
+export default Profile;

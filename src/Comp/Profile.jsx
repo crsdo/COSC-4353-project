@@ -1,9 +1,10 @@
 // Profile.js
-
+import { createAPIEndpoint, ENDPOINTS } from "../API";
 import React, { useState } from 'react';
 import './Profile.css'; // Import your CSS file for styling
 import NavBar from './NavBar'; // Import the NavBar component
 import Sidebar from './Sidebar';
+import { Link, useNavigate } from "react-router";
 
 const Profile = () => {
     const [fullName, setFullName] = useState('');
@@ -12,10 +13,11 @@ const Profile = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zipcode, setZipcode] = useState('');
+    const nav = useNavigate();
 
     return (
         <div>
-            <NavBar /> {/* Include the NavBar component */}
+            <NavBar /> 
             <Sidebar />
             <div className="profile-container">
                 <h2>Profile Management</h2>

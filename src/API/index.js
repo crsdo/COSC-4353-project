@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //connects front end to back end, change if needed
 
-export const BASE_URL = 'http://localhost:6000/';
+export const BASE_URL = 'https://c84b-76-142-23-132.ngrok-free.app/';
 
 
 export const ENDPOINTS = {

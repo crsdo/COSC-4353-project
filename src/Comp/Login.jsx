@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from './NavBar';
 
+
 import { createAPIEndpoint, ENDPOINTS } from '../API';
-import axios from 'axios';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -16,17 +16,23 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await createAPIEndpoint(ENDPOINTS.UserLogin).post({
-        username: username,
-        password: password
-      });
+      const payload = {
+        payload: {
+          "username": username,
+          "password": password
+        }
+      }
+      const response = await createAPIEndpoint(ENDPOINTS.UserLogin).post(payload);
 
       if (!response || response.status !== 200) {
         throw new Error(response.error);
       }
+      // give accesss token here 
+      // check access token verification 
+      // takes you to the profile
       nav('/view_profile');
     } catch (error) {
-      setError(error.message);
+      alert(error);
     }
 
   };
