@@ -2,10 +2,13 @@
 
 .sidebar {
     width: 100%;
-    background-color: #fff;
-    border-top: 1px solid #ccc;
+    background-color: #ffffff;
+    border-top: 2.5px solid #012745;
+    border-bottom: 2.5px solid #012745;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
   
   .sidebar ul {
@@ -15,7 +18,7 @@
   }
   
   .sidebar ul li {
-    padding: 10px;
+    padding: 3px;
   }
   
   .sidebar ul li a {

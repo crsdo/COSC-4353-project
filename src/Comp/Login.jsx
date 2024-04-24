@@ -31,44 +31,43 @@ const Login = () => {
     
   };
 
-  return (
-    <div>
-      <NavBar />
-      <div className="login-container">
-        <div className="login-form">
-          <h2>Welcome back</h2>
-          {error && <div className="error-message">{error}</div>}
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              placeholder="Username*"
-            />
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Password*"
-            />
-            <button type="submit">Sign in</button>
-          </form>
-          <div className="forgot-password">
-            <Link to="#">Forgot password?</Link>
-          </div>
-          <div className="signup-link">
-            Don't have an account? <Link to="/register">Sign up</Link>
-          </div>
+    return (
+        <div>
+            <NavBar />
+            <div className="login-container">
+                <div className="login-form">
+                    <h2>Welcome back</h2>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <button type="submit">Sign in</button>
+                    </form>
+                    <div className="forgot-password">
+                        <Link to="#">Forgot password?</Link>
+                    </div>
+                    <div className="signup-link">
+                        Don't have an account? <Link to="/register">Sign up</Link>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Login;
