@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link , useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from './NavBar';
 
@@ -10,7 +10,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const nav = useNavigate ();
+  const nav = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,46 +28,46 @@ const Login = () => {
     } catch (error) {
       setError(error.message);
     }
-    
+
   };
 
-    return (
-        <div>
-            <NavBar />
-            <div className="login-container">
-                <div className="login-form">
-                    <h2>Welcome back</h2>
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Username</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                        <button type="submit">Sign in</button>
-                    </form>
-                    <div className="forgot-password">
-                        <Link to="#">Forgot password?</Link>
-                    </div>
-                    <div className="signup-link">
-                        Don't have an account? <Link to="/register">Sign up</Link>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div>
+      <NavBar />
+      <div className="login-container">
+        <div className="login-form">
+          <h2>Welcome back</h2>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Sign in</button>
+          </form>
+          <div className="forgot-password">
+            <Link to="#">Forgot password?</Link>
+          </div>
+          <div className="signup-link">
+            Don't have an account? <Link to="/register">Sign up</Link>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Login;
