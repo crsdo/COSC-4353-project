@@ -39,6 +39,7 @@ const Signup = () => {
                 
             const response = await createAPIEndpoint(ENDPOINTS.UserRegister).post(payload);
             alert("Account Successfully Created");
+            nav("/login");
             setSignupSuccess(true); // Update state to indicate successful signup
         }
 

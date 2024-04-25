@@ -6,7 +6,7 @@ const ForgetPass = () => {
     return (
         <div>
             <Navbar />
-            <div className="pp-conatiner"  >
+            <div className="login-container">
                 <div className="forget-pass">
                     <h1>Forget Password</h1>
                     <form>

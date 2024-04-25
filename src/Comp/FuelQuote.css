@@ -74,3 +74,8 @@ body {
 .pp-container {
   height: 100vh;
 }
+
+.bi-button{
+    background-color: #874caf;
+    color: white;
+}

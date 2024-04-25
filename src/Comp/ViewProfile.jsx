@@ -55,7 +55,9 @@ const ViewProfile = () => {
       <NavBar />
       <Sidebar />
       <div className="pp-container">
+        <div className ="Myspace"></div>
         <div className="profile-container">
+          <div className="customer-info">
           <h2>Profile Management</h2>
           <div className="profile-data">
             <table>
@@ -91,9 +93,10 @@ const ViewProfile = () => {
                   <td>{zipcode}</td>
                 </tr>
               </tbody>
-              <button onClick={handleEditClick}>Edit Profile</button>
-              <button onClick={handlePassClick}>Change Password</button>
+              <button onClick={handleEditClick} className="bt-button">Edit Profile</button>
+              <button onClick={handlePassClick} className="bb-button">Change Password</button>
             </table>
+          </div>
           </div>
         </div>
       </div>

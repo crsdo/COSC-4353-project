@@ -4,6 +4,7 @@ import Navbar from './NavBar';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import Sidebar from './Sidebar';
 
 const Password = () => {
     const [oldPassword, setOldPassword] = useState('');
@@ -44,7 +45,11 @@ const Password = () => {
     return (
         <div>
             <Navbar />
-            <div className="Password">
+            <Sidebar />
+            <div className = "pp-container">
+                <div className='Myspace'></div>
+                <div className="profile-container">
+                <div className="Password">
                 <h1>Change Password: </h1>
                 <form onSubmit={handleSubmit}>
                     <label>Enter Old Password</label>
@@ -78,6 +83,9 @@ const Password = () => {
                     <button type='submit'>Submit</button>
                 </form>
             </div>
+                    </div>
+            </div>
+
         </div>
     );
 };

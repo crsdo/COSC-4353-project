@@ -11,6 +11,9 @@
     align-items: center; /* Center horizontally */
 }
 
+.Myspace{
+    padding: 25px;
+}
 /* Profile data container */
 .profile-data {
     width: 100%; /* Make the profile data container 100% width */
@@ -18,7 +21,7 @@
 
 /* Profile table */
 .profile-data table {
-    width: 75%; /* Make the table 100% width */
+    width: 100%; /* Make the table 100% width */
     border-collapse: collapse;
     margin: 0 auto;
 }
@@ -56,12 +59,18 @@
 
 /* Additional styles as needed */
 
-button {
+.bt-button,
+.bb-button {
     background-color: #874caf;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 160%;
+    margin-top: 10px;
+}
+
+.bt-button:hover,
+.bb-button:hover {
+    background-color: #6b389f; /* Adjust hover color as needed */
 }

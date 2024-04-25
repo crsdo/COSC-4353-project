@@ -86,6 +86,7 @@ const QuoteForm = () => {
             <Navbar />
             <Sidebar />
             <div className='pp-container'>
+                <div className="Myspace"></div>
                 <div className="profile-container">
                     <h2>Fuel Quote Form</h2>
                     <form onSubmit={handleSubmit} className="checkout-form">
@@ -122,7 +123,7 @@ const QuoteForm = () => {
                                 <p>Suggested Price / gallon:  ${expectedCost}</p>
                                 <p>Total Cost: ${totalCost}</p>
                             </div>
-                            <button type="submit">Submit</button>
+                            <button type="submit" className='bi-button'>Submit</button>
                         </div>
 
                     </form>
