@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 110vh;
+  background-color: #ada0c3;
+  border-top: 2.5px solid #012745 !important;
 }
 
 .signup-form {

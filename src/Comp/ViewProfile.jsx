@@ -23,10 +23,11 @@ const ViewProfile = () => {
 
       const instance = axios.create({
         baseURL: "https://bbcf-76-142-23-132.ngrok-free.app/",
-        headers: { 
+        headers: {
           "ngrok-skip-browser-warning": "69420",
           "Content-Type": "application/json",
-          authentication: accessToken },
+          authentication: accessToken
+        },
       });
       const response = await instance.get("api/user/profile/")
       setFullName(response.data.name);
@@ -54,47 +55,47 @@ const ViewProfile = () => {
       <NavBar />
       <Sidebar />
       <div className="pp-container">
-      <div className="profile-container">
-        <h2>Profile Management</h2>
-        <div className="profile-data">
-          <table>
-            <thead>
-              <tr>
-                <th>Field</th>
-                <th>Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Full Name:</td>
-                <td>{fullName}</td>
-              </tr>
-              <tr>
-                <td>Username:</td>
-                <td>{username}</td>
-              </tr>
-              <tr>
-                <td>Address 1:</td>
-                <td>{address1}</td>
-              </tr>
-              <tr>
-                <td>City:</td>
-                <td>{city}</td>
-              </tr>
-              <tr>
-                <td>State:</td>
-                <td>{state}</td>
-              </tr>
-              <tr>
-                <td>Zipcode:</td>
-                <td>{zipcode}</td>
-              </tr>
-            </tbody>
-            <button onClick={handleEditClick}>Edit Profile</button>
-            <button onClick={handlePassClick}>Change Password</button>
-          </table>
+        <div className="profile-container">
+          <h2>Profile Management</h2>
+          <div className="profile-data">
+            <table>
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Full Name:</td>
+                  <td>{fullName}</td>
+                </tr>
+                <tr>
+                  <td>Username:</td>
+                  <td>{username}</td>
+                </tr>
+                <tr>
+                  <td>Address 1:</td>
+                  <td>{address1}</td>
+                </tr>
+                <tr>
+                  <td>City:</td>
+                  <td>{city}</td>
+                </tr>
+                <tr>
+                  <td>State:</td>
+                  <td>{state}</td>
+                </tr>
+                <tr>
+                  <td>Zipcode:</td>
+                  <td>{zipcode}</td>
+                </tr>
+              </tbody>
+              <button onClick={handleEditClick}>Edit Profile</button>
+              <button onClick={handlePassClick}>Change Password</button>
+            </table>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

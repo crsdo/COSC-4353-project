@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import NavBar from './NavBar';
-// import Footer from './Footer';
+
 
 
 import { createAPIEndpoint, ENDPOINTS } from '../API';
@@ -75,7 +75,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

@@ -5,6 +5,9 @@ body, h2, h3, p {
     margin: 0;
     padding: 0;
 }
+.pp-container{
+    background-color: #ada0c3;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -24,7 +27,7 @@ body {
     width: 100%; /* Make the form width 100% */
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    
     border-radius: 5px;
     background-color: #fff; /* Set a white background */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */

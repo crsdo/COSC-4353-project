@@ -1,12 +1,12 @@
 .aa-container {
     position: relative; /* Ensure this is positioned relatively for absolute children */
     height: 140vh; /* Adjust height as necessary */
-    border: 2.5px solid #012745; /* Keep if you need a border around the container */
     overflow: hidden; /* Optional: in case of overflow issues */
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the contents horizontally */
     justify-content: center; /* Center the contents vertically */
+    border-top: 2.5px solid #012745 !important;
 }
 
 .image-class {

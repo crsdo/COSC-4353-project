@@ -5,14 +5,14 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 
 /* Profile data container */
 .profile-data {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
     width: 100%; /* Make the profile data container 100% width */
 }
 
@@ -54,13 +54,10 @@
     }
 }
 
-.pp-container {
-    height: 100vh;
-}
 /* Additional styles as needed */
 
 button {
-    background-color: #4CAF50;
+    background-color: #874caf;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;

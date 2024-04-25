@@ -1,41 +1,48 @@
-// FuelHistoryForm.jsx
-
+import { useEffect, useState } from 'react';
 import React from 'react';
 import './FuelHistory.css'; // Import the CSS file
 import Navbar from './NavBar';
 import Sidebar from './Sidebar';
-
-const dummyData = [
-    {
-        id: 1,
-        gallonsRequested: 150,
-        deliveryAddress: '123 Elm St, Springfield, IL 62701',
-        deliveryDate: '2024-04-15',
-        suggestedPricePerGallon: 2.45,
-        totalAmountDue: 367.50,
-        status: 'Past Order'
-    },
-    {
-        id: 2,
-        gallonsRequested: 200,
-        deliveryAddress: '456 Oak St, Springfield, IL 62702',
-        deliveryDate: '2024-05-01',
-        suggestedPricePerGallon: 2.40,
-        totalAmountDue: 480.00,
-        status: 'Past Order'
-    },
-    {
-        id: 3,
-        gallonsRequested: 100,
-        deliveryAddress: '789 Maple St, Springfield, IL 62703',
-        deliveryDate: '2024-05-15',
-        suggestedPricePerGallon: 2.55,
-        totalAmountDue: 255.00,
-        status: 'Current Order'
-    }
-];
+import axios from 'axios';
 
 const FuelHistoryForm = () => {
+    const [client, setClient] = useState([]);
+    const [error, setError] = useState(null);
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [zipcode, setZipcode] = useState("");
+
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const accessToken = localStorage.getItem("accessToken");
+                const instance = axios.create({
+                    baseURL: "https://bbcf-76-142-23-132.ngrok-free.app/",
+                    headers: {
+                        "ngrok-skip-browser-warning": "69420",
+                        "Content-Type": "application/json",
+                        authentication: accessToken
+                    },
+                });
+                const response = await instance.get("api/history/oil/");
+                const getAddress = await instance.get("api/user/profile/");
+                setClient(response.data);
+                setAddress(getAddress.data.address.street);
+                setCity(getAddress.data.address.city);
+                setState(getAddress.data.address.state);
+                setZipcode(getAddress.data.address.zipcode);
+
+            } catch (error) {
+                console.error("Error fetching quote history:", error);
+                setError(error);
+            }
+        }
+
+        fetchData();
+    }, []); // Empty dependency array to fetch data only once
+
     return (
         <div>
             <Navbar />
@@ -55,40 +62,18 @@ const FuelHistoryForm = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {dummyData.filter(quote => quote.status === 'Current Order').map((quote, index) => (
+                        {client.map((client, index) => (
                             <tr key={index}>
-                                <td>{quote.gallonsRequested}</td>
-                                <td>{quote.deliveryAddress}</td>
-                                <td>{quote.deliveryDate}</td>
-                                <td>{quote.suggestedPricePerGallon}</td>
-                                <td>{quote.totalAmountDue}</td>
+                                <td>{client.gallons_requested}</td>
+                                <td>{`${address}, ${state} ${zipcode}`}</td>
+                                <td>{client.deliveryDate.split("T")[0]}</td>
+                                <td>{1.50}</td>
+                                <td>{client.price}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-                <h3>Past Orders</h3>
-                <table className="past-orders-table">
-                    <thead>
-                        <tr>
-                            <th>Gallons Requested</th>
-                            <th>Delivery Address</th>
-                            <th>Delivery Date</th>
-                            <th>Suggested Price per Gallon</th>
-                            <th>Total Amount Due</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {dummyData.filter(quote => quote.status === 'Past Order').map((quote, index) => (
-                            <tr key={index}>
-                                <td>{quote.gallonsRequested}</td>
-                                <td>{quote.deliveryAddress}</td>
-                                <td>{quote.deliveryDate}</td>
-                                <td>{quote.suggestedPricePerGallon}</td>
-                                <td>{quote.totalAmountDue}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                {error && <p>Error fetching data: {error.message}</p>}
             </div>
             </div>
         </div>

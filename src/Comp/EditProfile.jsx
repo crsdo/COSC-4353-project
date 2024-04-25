@@ -42,6 +42,8 @@ const EditProfile = () => {
       const response = await instance.put("api/user/edit-profile", payload);
       alert("Your changes have been successfully saved!");
       console.log(response.data);
+      nav("/view_profile");
+      window.location.reload();
     } catch (error) {
       console.error("Error updating profile:", error);
     }
